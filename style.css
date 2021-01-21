@@ -1,0 +1,285 @@
+/* begin general */
+*{
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    /* height: 100vh; */
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    font-weight: 600;
+}
+
+ul{
+    list-style: none;
+}
+/* end general */
+
+/* begin nav */
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: rgb(44, 117, 181);
+    transition: 1s;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.nav img{
+    height: 60px;
+}
+
+.nav-scroll{
+    background-color: rgb(38, 101, 157);
+}
+
+.menu{
+    padding-top: 20px;
+}
+
+.menu li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.menu li a{
+    color: white;
+    font-weight: bold;
+}
+/* end nav */
+
+/* begin carousel */
+.content{
+    position: relative;
+}
+
+.carousel{
+    background-color: rgb(44, 117, 181);
+    height: 600px;
+    font-size: 90px;
+    color: white;
+}
+
+.carousel span{
+    font-weight: 600;
+}
+
+.tagline{
+    text-transform: uppercase;
+    position: relative;
+    left: 100px !important;
+}
+
+.pocari{
+    position: absolute;
+    animation: float-animation 2s ease-in-out infinite;
+}
+
+.pocari img {
+    height: 300px;
+    opacity: 0;
+}
+/* end carousel */
+
+
+.appear{
+    opacity: 1 !important;
+    animation: appear 3s;
+}
+
+.appear-li{
+    transform: translateX(-100px);
+    animation: 3s;
+}
+
+/* animation */
+@keyframes float-animation {
+    0%{top: 150px;}
+    50%{top: 100px;}
+    100%{top: 150px;}
+}
+
+@keyframes appear{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes appear-li{
+    0%{transform: translateX(-100px);}
+    100%{transform: translateX(0px);}
+}
+
+/* begin products */
+.product{
+    opacity: 0;
+}
+
+.product-visible{
+    opacity: 1;
+    transition: 2s;
+}
+
+
+.product img{
+    width: 200px;
+}
+
+.product img:hover {
+    transform: scale(1.5);
+    animation: image-scale 500ms;
+}
+
+.product h2{
+    color: rgb(44, 117, 181);
+    font-weight: 600;
+}
+
+@keyframes image-scale {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+/* end products */
+
+/* begin other */
+.other{
+    display: flex;
+}
+
+.other img{
+    width: 100%;
+    transition: transform .5s,
+    filter 1.5s ease-in-out;
+}
+
+.card:hover{
+    border-color: rgb(44, 117, 181);
+    transition: 2s;
+}
+
+.card img:hover{
+    transform: scale(1.01);
+    box-sizing: border-box;
+}
+/* end other */
+
+/* begin footer */
+.footer{
+    background-color: rgb(28, 75, 116);
+    color: white;
+}
+/* end footer */
+
+/* begin footer 2 */
+.footer2 img{
+    width: 100px;
+}
+
+.ul-footer{
+    align-content: space-around;
+}
+/* end footer 2 */
+
+.hamburger{
+    display: none;
+}
+
+.mobile-menu{
+    display: none;
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(44, 117, 181);
+    align-items: center;
+}
+
+.mobile-menu a{
+    color: white;
+    text-transform: uppercase;
+}
+
+.mobile-menu-flex{
+    display: flex;
+    position: absolute;
+    top: 50px;
+    z-index: 9999;
+}
+
+/* begin mobile */
+@media only screen and (max-width: 768px){
+    /* begin nav */
+    .menu{
+        display: none;
+    }
+
+    .hamburger{
+        display: flex;
+        z-index: 9999;
+        flex-direction: column;
+        position: relative;
+        right: 20px;
+    }
+
+    .hamburger:hover{
+        cursor: pointer;
+    }
+
+    .hr{
+        width: 40px;
+        height: 3px;
+        background-color: white;
+        margin: 4px 0;
+        border: none;
+    }
+
+    .nav{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .mobile-menu li{
+        margin: 10px 0;
+    }
+    /* end nav */
+
+    /* begin welcome */
+    .pocari{
+        display: none;
+    }
+
+    .tagline{
+        font-size: 25%;
+        transition: 1s;
+        position: static;
+        left: 0 !important;
+    }
+    /* end welcome */
+
+    /* begin product */
+    .card-body{
+        margin: 0 15px;
+    }
+
+    .product img{
+        margin-bottom: 50px;
+    }
+
+
+    /* end product */
+}
+/* end mobile */
