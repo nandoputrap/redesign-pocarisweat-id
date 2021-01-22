@@ -28,10 +28,13 @@ ul{
     align-items: center;
     text-transform: uppercase;
     background-color: rgb(44, 117, 181);
-    transition: 1s;
     position: fixed;
     width: 100%;
     z-index: 100;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
 }
 
 .nav img{
@@ -125,6 +128,10 @@ ul{
 
 .product-visible{
     opacity: 1;
+
+    -webkit-transition: 2s;
+    -moz-transition: 2s;
+    -o-transition: 2s;
     transition: 2s;
 }
 
